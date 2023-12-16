@@ -1,0 +1,6 @@
+.board-container {
+    border-style: solid;
+    border-color: black;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+}
