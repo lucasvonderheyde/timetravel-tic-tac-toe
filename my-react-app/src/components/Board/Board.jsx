@@ -15,7 +15,7 @@ export default function Board({ playerTurn, setPlayerTurn }) {
     return(
         <div className="board-container">
             {squareids.map(id => 
-                <Square id={id} />
+                <Square id={id} playerTurn={playerTurn} setPlayerTurn={setPlayerTurn} />
             )}
         </div>
     )
