@@ -10,7 +10,7 @@ const squareids = [
     21, 22, 23, 24, 25
 ]
 
-export default function Board() {
+export default function Board({ playerTurn, setPlayerTurn }) {
 
     return(
         <div className="board-container">
