@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './Square.css'
 
-export default function Square({ id, playerTurn, setPlayerTurn }) {
+export default function Square({ id, boardId, playerTurn, setPlayerTurn, gamePageDiv, setGamePageDiv, clickAndAddNextBoard }) {
 
     const [squareState, setSquareState] = useState("-")
 
@@ -16,7 +16,15 @@ export default function Square({ id, playerTurn, setPlayerTurn }) {
         }
     }
 
+    const buttonClickHandler = (event) =>{
+        boardId++
+        clickGameSquare()
+        setGamePageDiv([...gamePageDiv, boardId])
+        // clickAndAddNextBoard()
+        
+    }
+
     return(
-        <button className='square' onClick={clickGameSquare} >{squareState}</button>
+        <button className='square' onClick={buttonClickHandler} >{squareState}</button>
     )
 }

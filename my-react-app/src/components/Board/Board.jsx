@@ -10,12 +10,21 @@ const squareids = [
     21, 22, 23, 24, 25
 ]
 
-export default function Board({ playerTurn, setPlayerTurn }) {
+export default function Board({ boardId, playerTurn, setPlayerTurn, gamePageDiv, setGamePageDiv, clickAndAddNextBoard }) {
 
     return(
         <div className="board-container">
+            <h3>{boardId}</h3>
             {squareids.map(id => 
-                <Square id={id} playerTurn={playerTurn} setPlayerTurn={setPlayerTurn} />
+                <Square 
+                id={id} 
+                boardId={boardId}
+                playerTurn={playerTurn} 
+                setPlayerTurn={setPlayerTurn}
+                gamePageDiv={gamePageDiv}
+                setGamePageDiv={setGamePageDiv}
+                // clickAndAddNextBoard={clickAndAddNextBoard} 
+                />
             )}
         </div>
     )
